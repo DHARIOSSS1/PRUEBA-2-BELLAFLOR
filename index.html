@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia AR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .iframe-container {
+      width: 100%;
+      height: 80vh;
+      overflow: hidden;
+      position: relative;
+    }
+    iframe {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      border: none;
+    }
+    button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explora en Realidad Aumentada</h1>
+
+  <div class="iframe-container">
+    <iframe 
+      id="lumaFrame"
+      src="https://lumalabs.ai/embed/cd1bc741-72d9-4485-828d-78f7742a0acc?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=false&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&showMenu=false"
+      allow="camera; microphone; fullscreen; xr-spatial-tracking; geolocation; midi"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <button onclick="activarAR()">🔮 Activar Realidad Aumentada</button>
+
+  <script>
+    function activarAR() {
+      const frame = document.getElementById('lumaFrame');
+      const arURL = "https://lumalabs.ai/embed/cd1bc741-72d9-4485-828d-78f7742a0acc?mode=ar";
+      frame.src = arURL;
+    }
+  </script>
+
+</body>
+</html>
